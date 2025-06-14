@@ -3,7 +3,7 @@
 	// phpinfo();
 	error_reporting(E_ALL);
 	session_start(); 
-	$path = "http://".$_SERVER['HTTP_HOST']."/labrefcpe/";
+	$path = "/";
 		
 	global $n; $idespe;
 	if(!isset($_GET['key'])) { $n=rand(1000,9999); } else { $n = base64_decode($_GET['key']); }

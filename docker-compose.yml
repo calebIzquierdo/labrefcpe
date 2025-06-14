@@ -1,0 +1,37 @@
+version: '3.8'
+
+services:
+  web:
+    build: .
+    container_name: php-apache
+    ports:
+      - "8082:80"
+    volumes:
+      - .:/var/www/html
+    depends_on:
+      - db
+    networks:
+      - app-network
+
+  db:
+    image: postgres:12
+    container_name: postgres-db
+    restart: always
+    environment:
+      POSTGRES_DB: labreferencial_cpe
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 123456
+    ports:
+      - "5434:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+      - ./db-init/labrefcpe.sql:/docker-entrypoint-initdb.d/init.sql  
+    networks:
+      - app-network
+
+volumes:
+  pgdata:
+
+networks:
+  app-network:
+    driver: bridge

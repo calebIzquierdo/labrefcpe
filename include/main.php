@@ -1,6 +1,6 @@
 <?php
 global $path;
-$path = "http://" . $_SERVER['HTTP_HOST'] . "/labrefcpe/";
+$path = "/";
 function cabecera()
 {
     $path;

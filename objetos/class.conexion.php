@@ -8,7 +8,7 @@
 	// Servidor Local;
 	define('DB_USER', 'postgres');		// Your PostgreSql username
 	define('DB_PASSWORD', '123456');	// Password User	Huayane83
-	define('DB_DSN','pgsql:host=127.0.0.1;dbname=labreferencial_cpe');	// Server DataBase
+	define('DB_DSN', 'pgsql:host=db;port=5432;dbname=labreferencial_cpe');	// Server DataBase
 	define('RUCSOL','20494013453');
 	define('USUARIOSOL','VTRIGOSO');
 	define('CLAVESOL','Abc123456');

@@ -32,8 +32,8 @@ services:
   jenkins:
     container_name: jenkins
     build:
-      context: ./jenkins-docker-image
-      dockerfile: Dockerfile
+      context: ./jenkins-docker-image  # Asegúrate de que esta ruta exista
+      dockerfile: Dockerfile  # Asegúrate de que este Dockerfile esté en la ruta correcta
     volumes:
       - ./jenkins_home:/var/jenkins_home  # Ruta para Linux
       - /var/run/docker.sock:/var/run/docker.sock  # Acceso a Docker desde el contenedor

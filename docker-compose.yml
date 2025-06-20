@@ -29,6 +29,20 @@ services:
     networks:
       - app-network
 
+  jenkins:
+    container_name: jenkins
+    build:
+      context: ./jenkins-docker-image
+      dockerfile: Dockerfile
+    volumes:
+      - ./jenkins_home:/var/jenkins_home  # Ruta para Linux
+      - /var/run/docker.sock:/var/run/docker.sock  # Acceso a Docker desde el contenedor
+    ports:
+      - "9080:8080"  # Puerto de Jenkins en tu servidor (9080) hacia el contenedor (8080)
+    networks:
+      - app-network
+    restart: unless-stopped
+
 volumes:
   pgdata:
 

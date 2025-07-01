@@ -6,9 +6,9 @@
 	date_default_timezone_set('America/Lima');
 
 	// Servidor Local;
-	define('DB_USER', 'postgres');		// Your PostgreSql username
-	define('DB_PASSWORD', '123456');	// Password User	Huayane83
-	define('DB_DSN', 'pgsql:host=db;port=5432;dbname=labreferencial_cpe');	// Server DataBase
+	define('DB_USER', 'postgres');		// Usuario de la base de datos
+	define('DB_PASSWORD', '123456');	// Contraseña del usuario
+	define('DB_DSN', 'pgsql:host=postgres-db;port=5432;dbname=labreferencial_cpe'); // Cambiar 'db' por 'postgres-db'
 	define('RUCSOL','20494013453');
 	define('USUARIOSOL','VTRIGOSO');
 	define('CLAVESOL','Abc123456');

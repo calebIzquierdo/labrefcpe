@@ -6,6 +6,10 @@ RUN apt-get update && apt-get install -y libpq-dev && docker-php-ext-install pdo
 # Habilitar mod_rewrite (si usas .htaccess)
 RUN a2enmod rewrite
 
+# Copiar configuración personalizada de Apache
+COPY apache.conf /etc/apache2/conf-available/custom.conf
+RUN a2enconf custom
+
 # Copiar los archivos al contenedor
 COPY . /var/www/html/
 
@@ -13,4 +17,5 @@ COPY . /var/www/html/
 RUN chown -R www-data:www-data /var/www/html
 
 EXPOSE 80
+
     
